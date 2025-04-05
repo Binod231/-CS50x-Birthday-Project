@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+{% endblock %}
+
+{% block header %}
+    <h1 class="header">Birthdays</h1>
+{% endblock %}
+
+<h2 class ="birthday">Add a Birthdays</h2>
+    <form method="post" action="/" class="birthdayForm">
+        <input autocomplete="off" autofocus type="text" name="name" placeholder="Name" required>
+        <input autocomplete="off" type="number" name="month" placeholder="Month" max="12" required>
+        <input autocomplete="off" type="number" name="day" placeholder="Day" max="31" required>
+        <button type="submit">Add Birthdays</button>
+    </form>
+
+    <h2 class="birthday">All Birthdays</h2>
+    <table id="birthdaysTable">
+        <tr>
+            <th>Name</th>
+            <th>Birthday</th>
+        </tr>
+
+        {% for birthday in birthdays %}
+        <tr>
+            <td>
+                {{ birthday.name }}
+            </td>
+            <td>
+                {{ birthday.month }}/{{ birthday.day }}
+            </td>
+            <td>
+                <!-- Edit Icon -->
+                <form method="get" action="/edit/{{ birthday.id }}" style="display:inline;">
+                <button type="submit" title="Edit">
+                <i class="fas fa-edit"></i>
+                </button>
+                </form>
+                <!-- Delete Icon -->
+                <form method="post" action="/delete/{{ birthday.id }}" style="display:inline;">
+                <button type="submit" title="Delete">
+                <i class="fas fa-trash"></i>
+                </button>
+                </form>
+                
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+
+{% endblock %}

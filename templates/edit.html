@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+{% endblock %}
+
+{% block header %}
+    <h1 class="header">Edit Birthday</h1>
+    {% endblock %}
+
+    <form method="post" action="/edit/{{ birthday.id }}" id="editForm">
+        <input autocomplete="off" autofocus type="text" name="name" placeholder="Name" required>
+        <input autocomplete="off" type="number" name="month" placeholder="Month" max="12" required>
+        <input autocomplete="off" type="number" name="day" placeholder="Day" max="31" required>
+        <button type="submit">Update</button>
+        <button type="button" onclick="window.location.href='/'">Cancel</button>
+    </form>
+
+{% endblock %}

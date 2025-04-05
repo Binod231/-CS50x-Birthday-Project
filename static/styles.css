@@ -1,0 +1,168 @@
+/* General styles */
+.header {
+    background-color: blue;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+/* Form styling */
+.birthday,
+#editForm .birthday {
+    color: black;
+    text-align: center;
+    margin: 3%;
+}
+
+.birthdayForm {
+    color: black;
+    text-align: center;
+    margin: 0;
+}
+
+#editForm {
+    color: black;
+    text-align: center;
+    margin: 5%;
+}
+
+/* Input fields */
+.birthdayForm input[type="text"],
+.birthdayForm input[type="number"],
+#editForm input[type="text"],
+#editForm input[type="number"] {
+    width: 90%;  /* Responsive width */
+    max-width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Buttons */
+.birthdayForm button,
+#editForm button {
+    background-color: rgb(147, 147, 241);
+    color: rgb(12, 12, 12);
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    width: 90%; /* Full width for mobile */
+    max-width: 150px;
+}
+
+.birthdayForm button:hover,
+#editForm button:hover {
+    background-color: rgb(116, 116, 230);
+}
+
+/* Table */
+#birthdaysTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+#birthdaysTable th, 
+#birthdaysTable td {
+    padding: 12px;
+    text-align: center;
+}
+
+#birthdaysTable tr:nth-child(even) {
+    background-color: rgb(183, 210, 238);
+}
+
+#birthdaysTable tr:nth-child(odd) {
+    background-color: white;
+}
+
+/* Edit & Delete Icons */
+#birthdaysTable button i.fas.fa-edit {
+    color: rgb(17, 17, 18);
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+#birthdaysTable button i.fas.fa-trash {
+    color: rgb(164, 17, 17);
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+#birthdaysTable button i:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+}
+
+/* Remove button background */
+#birthdaysTable button {
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) { /* Tablets and smaller */
+    .header {
+        font-size: 1.2rem;
+        padding: 15px;
+    }
+
+    .birthdayForm,
+    #editForm {
+        margin: 2%;
+    }
+
+    .birthdayForm input[type="text"],
+    .birthdayForm input[type="number"],
+    #editForm input[type="text"],
+    #editForm input[type="number"] {
+        width: 95%; /* Adjust width for smaller screens */
+    }
+
+    .birthdayForm button,
+    #editForm button {
+        width: 95%;
+        padding: 12px;
+    }
+
+    #birthdaysTable th, 
+    #birthdaysTable td {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) { /* Mobile screens */
+    .header {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .birthdayForm,
+    #editForm {
+        margin: 2%;
+    }
+
+    .birthdayForm input[type="text"],
+    .birthdayForm input[type="number"],
+    #editForm input[type="text"],
+    #editForm input[type="number"] {
+        width: 100%;
+    }
+
+    .birthdayForm button,
+    #editForm button {
+        width: 100%;
+        padding: 12px;
+    }
+
+    #birthdaysTable {
+        font-size: 14px;
+    }
+}
